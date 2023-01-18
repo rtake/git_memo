@@ -1,0 +1,42 @@
+〇追跡ブランチって何？
+【あいまいには】
+リモートブランチのローカル版
+【より正確には】
+ローカルリポジトリにあって、リモートブランチを追跡するブランチのこと（そのためリモート追跡ブランチとよぶ）
+【ちなみに】
+ローカルブランチがリモート追跡ブランチに関連づけられているとき、そのリモート追跡ブランチを上流ブランチという
+https://qiita.com/uasi/items/69368c17c79e99aaddbf
+
+〇リモート追跡ブランチ一覧を確認したい
+git branch -vv
+とすると、ローカルリポジトリ一覧と、（存在する場合は）そのリモート追跡リポジトリが表示される
+git branch -a
+とすると、リモート追跡ブランチを含むすべてのブランチが表示される。
+
+〇リモートブランチの変更が反映されてないんだけど？
+git fetchすれば反映されるはずです。
+
+〇リモートブランチからローカルブランチをcheckoutする
+git checkout -b local_branch_name origin/remote_branch_name
+https://qiita.com/YusukeSuzuki@github/items/3bd5752783fd2c2f8805
+【こんな時に使える】
+・Azure DevOpsやGitHubなどのリモートリポジトリで管理しているブランチから、ローカルブランチを作成したい
+→git cloneしてから上記コマンドでcheckoutすればよい（その際、git fetchも忘れずに）
+
+〇逆に、ローカルブランチをリモートブランチに登録したい
+
+
+〇いまいるローカルブランチに、追跡させるリモートブランチを設定したい
+・git branch -u [remotename]/[branch]
+https://www.pistolfly.com/weblog/2011/07/post-126.html
+・git push -u remote branch としても設定できる
+https://www.delftstack.com/ja/howto/git/set-upstream-in-git/
+
+〇リモート追跡リポジトリなんて設定した覚えがないけど大丈夫・・・？
+git clone した場合には、自動的にリモート追跡リポジトリが設定される
+
+
+〇リモートリポジトリを確認したい
+git remote -v
+
+〇
