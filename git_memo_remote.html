@@ -179,7 +179,7 @@ pre code {
 <h2>目次</h2>
 <ol style="list-style-type: decimal">
 <li><a href="#anchor1">はじめに</a></li>
-<li><a href="#anchor2">これだけ押さえればまずは大丈夫なコマンド集</a></li>
+<li><a href="#anchor2">これだけ押さえれば大丈夫 - clone/push/pull</a></li>
 <li><a href="#anchor3">少し詳しいGitの仕組み - 「追跡」を理解するためのTips</a></li>
 <li><a href="#anchor4">リモート操作のお困りごとと解消法</a></li>
 </ol>
@@ -204,7 +204,7 @@ pre code {
 <h3>対象読者と読み方</h3>
 <ul>
 <li><code>git commit</code> や <code>git add</code> などの基本操作を知っていれば読み進めることができます。</li>
-<li>リモート操作を活用した開発が初めての方は <a href="#anchor2">これだけ押さえればまずは大丈夫なコマンド集</a> を参照いただければ、基本的な操作には困らないはずです。</li>
+<li>リモート操作を活用した開発が初めての方は <a href="#anchor2">これだけ押さえれば大丈夫 - clone/push/pull</a> を参照いただければ、基本的な操作には困らないはずです。</li>
 <li>開発を進めていく中で困ったことが起きた場合には、Gitのもう少し詳細な仕組みを知っておくと対処しやすいことがあります。<a href="#anchor3">少し詳しいGitの仕組み - 「追跡」を理解するためのTips</a> では入門レベルから一歩踏み込み、Gitの仕組みやリモート操作の中で何が行われているのかを説明しています。</li>
 <li>実際に起こりうるお困りごとについては <a href="#anchor4">リモート操作のお困りごとと解消法</a> にまとめてあります。今後も拡充予定です。</li>
 </ul>
@@ -212,15 +212,15 @@ pre code {
 <p><a id="anchor2"></a></p>
 </div>
 </div>
-<div id="これだけ押さえればまずは大丈夫なコマンド集" class="section level2">
-<h2>2. これだけ押さえればまずは大丈夫なコマンド集</h2>
+<div id="これだけ押さえれば大丈夫---clonepushpull" class="section level2">
+<h2>2. これだけ押さえれば大丈夫 - clone/push/pull</h2>
 <p>リモート操作を活用した開発では、ローカル環境にリモートリポジトリを複製後、ローカルでの作業をコミットし、リモートリポジトリにコミットを反映する、という流れで開発が進んでいきます。必要に応じて、他メンバーの変更箇所をローカルに反映するための操作を行います。</p>
 <p><br></p>
 <div id="リモートリポジトリの複製---clone" class="section level3">
 <h3>リモートリポジトリの複製 - clone</h3>
 <ul>
 <li>自分の環境で作業できるように、リモートリポジトリをローカルに複製します。</li>
-<li>コマンド: <code>git clone [リモートリポジトリのURL]</code></li>
+<li>コマンド: <code>git clone &lt;リモートリポジトリのURL&gt;</code></li>
 </ul>
 <p><br></p>
 </div>
@@ -228,9 +228,9 @@ pre code {
 <h3>ローカルの変更をリモートに反映する - push</h3>
 <ul>
 <li>ローカルで作業した内容(コミット)を他メンバーが参照できるようにリモートに反映します。</li>
-<li>コマンド: <code>git push [リモートリポジトリ名] [リモートリポジトリのブランチ名]</code>
+<li>コマンド: <code>git push &lt;リモートリポジトリ名&gt; &lt;リモートリポジトリのブランチ名&gt;</code>
 <ul>
-<li>リモートリポジトリ名はデフォルトで <code>origin</code> になるので、<code>git push origin [ブランチ名]</code> とすることが多い。</li>
+<li>リモートリポジトリ名はデフォルトで <code>origin</code> になるので、<code>git push origin &lt;ブランチ名&gt;</code> とすることが多い。</li>
 <li>リモートリポジトリ名とリモートリポジトリのブランチ名は自動で設定されることが多いので、省略して <code>git push</code> だけでよい場合が多い。(逆に、<code>git push</code> で怒られるときはリポジトリとブランチが正しく設定されているのかを確認する必要がある)</li>
 </ul></li>
 <li>ローカルで作成したブランチをリモートリポジトリに登録したいときは <a href="#anchor5">こちら</a></li>
@@ -242,7 +242,7 @@ pre code {
 <h3>リモートリポジトリの最新版を自分の環境に取り込む - pull</h3>
 <ul>
 <li>他のメンバーによってリモートリポジトリが更新された場合に、その変更を自分のローカルにあるブランチに反映することが必要になります。</li>
-<li>コマンド: <code>git pull [リモートリポジトリ名] [リモートリポジトリのブランチ名]</code>
+<li>コマンド: <code>git pull [リモートリポジトリ名&gt; &lt;リモートリポジトリのブランチ名&gt;</code>
 <ul>
 <li>pushのときと同じ理由で <code>git pull</code> でよい場合が多い。</li>
 </ul></li>
@@ -277,8 +277,7 @@ pre code {
 <li><a href="https://qiita.com/uasi/items/69368c17c79e99aaddbf" class="uri">https://qiita.com/uasi/items/69368c17c79e99aaddbf</a> の図がわかりやすい。</li>
 <li>ローカルブランチがリモート追跡ブランチを追跡するように設定することで、リモートブランチとローカルブランチを対応付けることができる。
 <ul>
-<li><code>git branch -u [remotename]/[branch]</code> で、今いるブランチに追跡対象のリモート追跡ブランチを設定できる。</li>
-<li>図で示すとこんな感じ： &gt; [ローカルブランチ] -&gt;(追跡する)-&gt; [リモート追跡ブランチ] -&gt;(追跡する)-&gt; [リモートブランチ]</li>
+<li><code>git branch -u &lt;remotename&gt;/&lt;branch&gt;</code> で、今いるブランチに追跡対象のリモート追跡ブランチを設定できる。</li>
 </ul></li>
 </ul>
 <p><br></p>
@@ -310,9 +309,9 @@ pre code {
 </ul></li>
 <li><code>git branch -vv</code> で、ローカルブランチがリモート/リモート追跡ブランチを追跡できているか確認する。
 <ul>
-<li>追跡できてない場合は、ローカルリポジトリで対象のブランチに移動し <code>git branch -u [remotename]/[branch]</code> とする。
+<li>追跡できてない場合は、ローカルリポジトリで対象のブランチに移動し <code>git branch -u &lt;remotename&gt;/&lt;branch&gt;</code> とする。
 <ul>
-<li><code>[remotename]/[branch]</code> はリモート追跡ブランチ。</li>
+<li><code>&lt;remotename&gt;/&lt;branch&gt;</code> はリモート追跡ブランチ。</li>
 </ul></li>
 </ul></li>
 <li><code>git fetch</code> でリモート追跡ブランチを最新のリモートブランチに更新する。</li>
@@ -326,7 +325,7 @@ pre code {
 <div id="リモートブランチからローカルブランチを作りたいcheckoutしたい" class="section level3">
 <h3>リモートブランチからローカルブランチを作りたい(checkoutしたい)</h3>
 <ul>
-<li><code>git checkout -b [local_branch_name] [origin/remote_branch_name]</code>
+<li><code>git checkout -b &lt;local_branch_name&gt; &lt;origin/remote_branch_name&gt;</code>
 <ul>
 <li>参考: <a href="https://qiita.com/YusukeSuzuki@github/items/3bd5752783fd2c2f8805" class="uri">https://qiita.com/YusukeSuzuki@github/items/3bd5752783fd2c2f8805</a></li>
 </ul></li>
@@ -336,7 +335,7 @@ pre code {
 <div id="いまいるローカルブランチに追跡させるリモートブランチを設定したい" class="section level3">
 <h3>いまいるローカルブランチに、追跡させるリモートブランチを設定したい</h3>
 <ul>
-<li><code>git branch -u [remotename]/[branch]</code></li>
+<li><code>git branch -u &lt;remotename&gt;/&lt;branch&gt;</code></li>
 <li>または <code>git push -u remote branch</code></li>
 </ul>
 <p><br> <a id="anchor5"></a></p>
@@ -344,13 +343,14 @@ pre code {
 <div id="ローカルでブランチを新たに作成しそのブランチをリモートリポジトリに登録したい" class="section level3">
 <h3>ローカルでブランチを新たに作成し、そのブランチをリモートリポジトリに登録したい</h3>
 <ul>
-<li><code>git push [リモートリポジトリ名] [ローカルのブランチ名]:[リモートで新たに作成したいブランチ名]</code> とします。
+<li><code>git push &lt;リモートリポジトリ名&gt; &lt;ローカルのブランチ名&gt;:&lt;リモートで新たに作成したいブランチ名&gt;</code> とします。
 <ul>
-<li>普通にpushすると、“error: src refspec [ブランチ名] does not match any”と怒られる。原因については調査中。
+<li>普通にpushすると、“error: src refspec <ブランチ名> does not match any”と怒られる。
 <ul>
 <li><a href="https://qiita.com/kenkono/items/c488ec9559f6cca34313">gitをpushする際にエラー発生(error: src refspec ブランチ名 does not match any)</a></li>
+<li><a href="https://qiita.com/rtake/items/e9b8a45efbdc8b997e07">【Git】push時に生じる error:refspec src … does not match any とは何なのか？</a></li>
 </ul></li>
-<li><code>git push [リモートリポジトリ名] HEAD:[リモートで新たに作成したいブランチ]</code> でも大丈夫。
+<li><code>git push [リモートリポジトリ名] HEAD:[リモートで新たに作成したいブランチ&gt;</code> でも大丈夫。
 <ul>
 <li><a href="https://stackoverflow.com/questions/51909540/why-use-headmaster-instead-of-just-master-in-a-git-push-origin">Why use “HEAD:master” instead of just “master” in a “git push origin”</a></li>
 </ul></li>
@@ -363,12 +363,12 @@ pre code {
 <ul>
 <li>ローカルのブランチにリモートの情報を追加します。
 <ul>
-<li>コマンド: <code>git remote add [リモートリポジトリの名前] [ブランチ名]</code></li>
+<li>コマンド: <code>git remote add [リモートリポジトリの名前&gt; &lt;ブランチ名&gt;</code></li>
 <li>リモートリポジトリの名前は <code>origin</code> がデフォルトなので、<code>git remote add origin [ブランチ名]</code> とすることが多いです。</li>
 </ul></li>
 <li>リモートリポジトリにローカルの変更を反映します。
 <ul>
-<li>コマンド: <code>git push --set-upstream [リモートリポジトリ名] [ブランチ名]</code></li>
+<li>コマンド: <code>git push --set-upstream [リモートリポジトリ名&gt; &lt;ブランチ名&gt;</code></li>
 <li><code>git remote add</code> だけではローカルブランチとリモートリポジトリ上のブランチは連携されないので、<code>--set-upstream</code> としています。詳しくは <a href="#anchor3">少し詳しいGitの仕組み:追跡ブランチを中心に</a> をご覧ください。</li>
 </ul></li>
 <li>以降は <code>git push</code> だけでリモートにアップロードできます。</li>
